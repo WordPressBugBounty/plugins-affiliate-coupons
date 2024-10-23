@@ -1,11 +1,11 @@
-=== Affiliate Coupons - The #1 WordPress Coupon Plugin for Affiliate Marketers ===
+=== Affiliate Coupons - The #1 Coupon Display Plugin for Affiliate Marketers ===
 Contributors: deetronix
 Donate link: 
-Tags: affiliate coupons, coupon plugin, coupon, wp coupons, coupon reveal
+Tags: affiliate coupons, Click reveal, discount
 Requires at least: 3.0.1
 Requires PHP: 5.6.0
 Tested up to: 6.6.1
-Stable tag: 1.7.1
+Stable tag: 1.7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -107,6 +107,9 @@ Affiliate Coupons is a fully GDPR compatible WordPress coupon plugin. We don’t
 2. Settings
 
 == Changelog ==
+= Version 1.7.2 (23 Oct 2024) =
+* "WordPress" word removed from title as per guideline  
+
 = Version 1.7.1 (12 Sep 2024) =
 * fix : descripton can be styled using html tags  
 

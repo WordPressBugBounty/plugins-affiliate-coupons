@@ -351,6 +351,8 @@ function affcoups_tpl_the_coupon_social_share_button( $coupon, $args = array() )
  * @param array $args
  */
 function affcoups_tpl_the_vendor_logo( $coupon, $args = array() ) {     
+    if(!array_key_exists('vendor_logo', $coupon->options))
+    return;
     if(!($coupon->options['vendor_logo']=='show'))
         return;
     $vendor_id=$coupon->vendor_id;

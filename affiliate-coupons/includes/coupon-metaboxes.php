@@ -53,6 +53,15 @@ function affcoups_register_coupon_meta_boxes( $meta_boxes ) {
 			'type'        => 'text',
 			'placeholder' => esc_html__( 'e.g. SUMMERTIME50OFF', 'affiliate-coupons' ),
 		),
+		
+		array(
+			'name'        => esc_html__( '  ', 'affiliate-coupons' ),
+			'id'          => AFFCOUPS_PREFIX . 'enable_multi_coupon_code',
+			'type' => 'checkbox',
+			'desc' => esc_html__( 'Activate multicode coupon option', 'affiliate-coupons-pro' ),
+			'std'  => 0,
+		),
+
 		array(
 			'name'       => esc_html__( 'Valid from', 'affiliate-coupons' ),
 			'id'         => AFFCOUPS_PREFIX . 'coupon_valid_from',
@@ -121,6 +130,8 @@ function affcoups_register_coupon_meta_boxes( $meta_boxes ) {
 	);
 
 	$fields = apply_filters( 'affcoups_coupon_meta_box_details_fields', $fields );
+	$fields = apply_filters( 'affcoups_coupon_meta_box_details_fields_multi_coupon_code',$fields);
+
 
 	$meta_boxes[] = array(
 		'id'         => AFFCOUPS_PREFIX . 'coupon_details',
@@ -148,3 +159,45 @@ function affcoups_register_coupon_meta_boxes( $meta_boxes ) {
 	return $meta_boxes;
 }
 add_filter( 'rwmb_meta_boxes', 'affcoups_register_coupon_meta_boxes' );
+
+
+/**
+ * Extend meta box "Multi coupon code " fields
+ *
+ * @param $fields
+ * @return array
+ */
+
+ function affcoups_pro_coupon_meta_box_details_fields_multi_coupon_code($fields) {
+
+    if(affcoups_is_pro_version()){
+    $new_field = array(
+         'name'        => esc_html__( 'Multi Discount Code', 'affiliate-coupons' ),
+         'id'          => AFFCOUPS_PREFIX . 'multi_coupon_code',
+         'type'        => 'file',
+         'max_file_uploads' => 1,
+    );
+    }else{
+    $new_field = array(
+        'name'        => esc_html__( 'Multi Discount Codes', 'affiliate-coupons' ),
+        'id'          => AFFCOUPS_PREFIX . 'multi_coupon_codes',
+        'type'          => 'custom_html',
+        'std'  =>   '<p class="affcoups-pro-feature"> 
+        <span class="affcoups-pro-feature__badge">Pro Feature</span>
+           <span class="affcoups-pro-feature__text">
+               <strong> multicode coupon option </strong> 
+               is available in 
+               <a href= "https://affcoups.com/" target="_blank" rel="nofollow">Affiliate Coupons (PRO)</a> 
+           </span>
+       </p>',
+   );
+}
+    array_splice( $fields, 4, 0, [$new_field] ); // splice in at position 4
+ 
+    return $fields;
+ 
+ 
+ }
+ 
+ add_filter( 'affcoups_coupon_meta_box_details_fields_multi_coupon_code', 'affcoups_pro_coupon_meta_box_details_fields_multi_coupon_code', 10 );
+ 

@@ -5,7 +5,7 @@ Tags: affiliate coupons, Click reveal, discount
 Requires at least: 3.0.1
 Requires PHP: 5.6.0
 Tested up to: 6.6.2
-Stable tag: 1.7.3
+Stable tag: 1.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -107,6 +107,12 @@ Affiliate Coupons is a fully GDPR compatible WordPress coupon plugin. We don’t
 2. Settings
 
 == Changelog ==
+
+= Version 1.7.4 (16 Feb 2025 =
+* fix : security vulnerability patched
+* Tweak : added code to support pro feature
+* Plugin tested upto WordPress v6.7.1
+
 = Version 1.7.3 (03 Nov 2024) =
 * fix : warning undefined array key vendor_logo fixed  
 

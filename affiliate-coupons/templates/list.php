@@ -19,6 +19,8 @@ if ( ! isset( $args ) ) {
     $args = array();
 }
 
+
+
 do_action( 'affcoups_template_begin', $coupons, $args ); ?>
 
 <div class="affcoups-coupons-list">
@@ -28,13 +30,13 @@ do_action( 'affcoups_template_begin', $coupons, $args ); ?>
         foreach( $coupons as $coupon ): ?>
 
             <div class="<?php $coupon->the_classes('affcoups-coupon' ); ?>"<?php $coupon->the_container(); ?>>
-
-                <?php affcoups_tpl_the_coupon_discount( $coupon ); ?>
-
+            <div class="affcoups-vendor__logo_list"> <?php affcoups_tpl_the_vendor_logo( $coupon);  ?> </div>
+           <?php 
+          //  <div style="position: absolute;  z-index:25; font-size: 34px;  width:100px; text-align:center; line-height:1;border:2px solid red;  font: size 5px;  white-space: pre-wrap;"> <?php  //echo $coupon->get_discount(); </div> 
+            ?>
                 <div class="affcoups-coupon__header">
                     <?php affcoups_tpl_the_coupon_image( $coupon ); ?>
                     <?php affcoups_tpl_the_coupon_types( $coupon ); ?>
-                    <div class="affcoups-vendor__logo_list"> <?php affcoups_tpl_the_vendor_logo( $coupon);  ?> </div>
                 </div>
 
                 <div class="affcoups-coupon__content">

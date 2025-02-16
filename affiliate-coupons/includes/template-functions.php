@@ -191,11 +191,11 @@ function affcoups_tpl_the_coupon_description_with_excerpt( $coupon ) {
  *
  * @param Affcoups_Coupon $coupon
  */
-function affcoups_tpl_the_coupon_code( $coupon ) {
+function affcoups_tpl_the_coupon_code( $coupon,$show_code=false ) {
    // $coupon_meta=get_post_meta($Coupon->post->ID);
    // if ($coupon_meta['affcoups_click_to_reveal_disable'][0] )
    // return $button_html;
-   if ( !affcoups_is_pro_version() ){?>
+   if ( !affcoups_is_pro_version() | $show_code){?>
    <div class="affcoups-coupon__code">
    <?php $coupon->the_code(); ?>
     </div> 

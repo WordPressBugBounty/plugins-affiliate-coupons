@@ -176,6 +176,7 @@ function affcoups_add_shortcode( $atts, $content ) {
 
             // Collect template settings
             $template = ( ! empty( $template ) ) ? esc_html( $template ) : $template_default;
+            $template=sanitize_file_name($template);
             $grid_size = $grid_size_default;
             $style = ( ! empty( $style ) ) ? esc_html( $style ) : $style_default;
 

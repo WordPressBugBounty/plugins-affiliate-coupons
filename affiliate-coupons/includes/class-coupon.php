@@ -526,11 +526,77 @@ if ( ! class_exists( 'Affcoups_Coupon' ) ) {
          */
         function get_code() {
 
-            $code = get_post_meta( $this->id, AFFCOUPS_PREFIX . 'coupon_code', true );
+            $enable_multi_coupon_code = get_post_meta( $this->id, AFFCOUPS_PREFIX . 'enable_multi_coupon_code', true );
+        
+            if($enable_multi_coupon_code && affcoups_is_pro_version()){
+                $file_id = get_post_meta( $this->id, AFFCOUPS_PREFIX . 'multi_coupon_code', true );
+                if(empty($file_id))
+                return;
+                // Now process the CSV file: read, remove the first row, and save it
+                $file_path = get_attached_file($file_id);
+                // Check if the session is already set
+                // Start the session to track the user
+                if (session_status() == PHP_SESSION_NONE) {
+                    // Start the session if it hasn't been started yet
+                    session_start();
+                }
+                
 
-            return ( ! empty ( $code ) ) ? $code : null;
+                // Check if the session ID exists, if not, create a new one
+                if (!isset($_SESSION['session_id'])) {
+                    $_SESSION['session_id'] = session_id();
+                    }
+
+                // Open the CSV file
+                if (($handle = fopen($file_path, 'r+')) !== FALSE) {
+                    $rows = [];
+                    $first_row = null;
+
+                    // Read the CSV content
+                    while (($data = fgetcsv($handle)) !== FALSE) {
+
+                        // Capture the first row
+                        if (!$first_row) {
+                            $first_row = $data;
+                            $code=$first_row[0];
+
+
+                        } else {
+                            $rows[] = $data;
+                            
+                        }
+                    }
+        
+                    // Close the CSV file
+                    fclose($handle);
+            if (!isset($_SESSION['first_row_deleted']) || $_SESSION['first_row_deleted'] !== true) {
+                    // Reopen the file for writing (truncate)
+                    if (($handle = fopen($file_path, 'w')) !== FALSE) {
+                        // Write the modified data (excluding the first row)
+                        foreach ($rows as $row) {
+                            fputcsv($handle, $row);
+                        }
+                        // Close the file after writing
+                        fclose($handle);
+                        $_SESSION['first_row_deleted'] = true;
+                    }
+                }
+
+            }
+
+            
+            }else {
+
+                $code = get_post_meta( $this->id, AFFCOUPS_PREFIX . 'coupon_code', true );
+            }
+            return ( ! empty ( $code ) ) ? $code : NULL;
+
         }
 
+
+        // since 1.3.4 , one time coupon code display , multiple coupon codes
+
+       
         /**
          * Show  coupon code
          *

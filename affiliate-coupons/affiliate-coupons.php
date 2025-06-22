@@ -50,7 +50,7 @@ if( ! class_exists( 'Affiliate_Coupons' ) ) :
          * @since  1.0.0
          * @var    string
          */
-        private $version = '1.7.4';
+        private $version = '1.8';
 
         /**
          * Main Affiliate_Coupons Instance

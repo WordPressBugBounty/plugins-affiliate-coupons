@@ -108,7 +108,7 @@ Affiliate Coupons is a fully GDPR compatible WordPress coupon plugin. We don’t
 
 == Changelog ==
 
-= Version 1.7.4 (16 Feb 2025 =
+= Version 1.8 (16 Feb 2025 =
 * fix : security vulnerability patched
 * Tweak : added code to support pro feature
 * Plugin tested upto WordPress v6.7.1

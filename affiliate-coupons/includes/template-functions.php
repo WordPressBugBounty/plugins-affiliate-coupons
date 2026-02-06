@@ -112,8 +112,10 @@ function affcoups_tpl_the_coupon_title( $coupon ) {
 
     global $affcoups_template_args;
     $options = affcoups_get_options();
+    if(isset($options['title_display'])){
     if(($options['title_display']=='hide') || ($affcoups_template_args['title_display']=='hide'))       
     return;
+    }
 
     $coupon_title = $coupon->get_title();
     $coupon_title = affcoups_cleanup_html_attribute( $coupon_title );
@@ -171,8 +173,10 @@ function affcoups_tpl_the_coupon_description_with_excerpt( $coupon ) {
 
      global $affcoups_template_args;
     $options = affcoups_get_options();
+    if(isset($options['description'])){
     if(($options['description']=='hide') || ($affcoups_template_args['description']=='hide'))
-            return;           
+            return; 
+}          
     ?>
     <div class="affcoups-coupon__description">
         <div class="affcoups-coupon__description-excerpt">

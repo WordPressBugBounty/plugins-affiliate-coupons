@@ -61,7 +61,7 @@ if ( ! class_exists( 'Affcoups_Single_Widget' ) ) {
 				affcoups_widget_do_shortcode( $shortcode_atts );
 
 			} else {
-				echo esc_attr( 'Please select a coupon.', 'affiliate-coupons' );
+				echo esc_attr_e( 'Please select a coupon.', 'affiliate-coupons' );
 			}
 
 			echo $args['after_widget'] ;
@@ -83,7 +83,7 @@ if ( ! class_exists( 'Affcoups_Single_Widget' ) ) {
 			?>
             <!-- Title -->
             <p>
-                <label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_attr_e( esc_attr( 'Title:' ), 'affiliate-coupons' ); ?></label>
+                <label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_attr_e( 'Title:', 'affiliate-coupons' ); ?></label>
                 <input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
             </p>
 

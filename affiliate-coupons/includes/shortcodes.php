@@ -53,8 +53,8 @@ function affcoups_add_shortcode( $atts, $content ) {
 		'orderby'      => null,
         'is_widget'    => false,
         'hide_image' => null, // since ver 1.1.12 option to hide image
-        'description'=> '',// since ver 1.6.7.8 to hide description
-        'title_display'=>'',//since ver 1.6.7.8 to hide title
+        'description'=> ' ',// since ver 1.6.7.8 to hide description
+        'title_display'=>' ',//since ver 1.6.7.8 to hide title
         'expiry_countdown'   => null, //since ver 1.1.13 to show expiry coundown 
 
     ) ), $atts ) );

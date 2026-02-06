@@ -107,7 +107,7 @@ if ( ! class_exists( 'Affcoups_Multiple_Widget' ) ) {
 			?>
             <!-- Title -->
             <p>
-                <label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_attr_e( esc_attr( 'Title:' ), 'affiliate-coupons' ); ?></label>
+                <label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_attr_e( 'Title:', 'affiliate-coupons' ); ?></label>
                 <input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
             </p>
 
@@ -181,7 +181,7 @@ if ( ! class_exists( 'Affcoups_Multiple_Widget' ) ) {
 
             <!-- Number of Coupons -->
             <p>
-                <label for="<?php echo esc_attr( $this->get_field_id( 'max' ) ); ?>"><?php esc_attr_e( esc_attr( 'Number of Coupons:' ), 'affiliate-coupons' ); ?></label>
+                <label for="<?php echo esc_attr( $this->get_field_id( 'max' ) ); ?>"><?php esc_attr_e( 'Number of Coupons:', 'affiliate-coupons' ); ?></label>
                 <input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'max' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'max' ) ); ?>" type="number" value="<?php echo esc_attr( $max ); ?>">
             </p>
 

@@ -1,15 +1,15 @@
-=== Affiliate Coupons - The #1 Coupon Display Plugin for Affiliate Marketers ===
+=== Affiliate Coupons - Coupon Display Manager - Excellent Tool for Affiliate Marketers ===
 Contributors: deetronix
 Donate link: 
 Tags: affiliate coupons, Click reveal, discount
 Requires at least: 3.0.1
 Requires PHP: 5.6.0
-Tested up to: 6.6.2
-Stable tag: 1.8
+Tested up to: 6.9
+Stable tag: 1.8.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-The best WordPress coupon plugin which helps you to earn more affiliate money!
+Helps you to earn more affiliate money!
 
 == Description ==
 
@@ -18,16 +18,16 @@ The best WordPress coupon plugin which helps you to earn more affiliate money!
 *All you need from a coupon plugin. Features include:*
 
 - **Easily create vendors and links for affiliate coupons** - Design beautifully structured lists of coupons provided by your favorite merchants.
-- **Display coupons via shortcode** - Your frontend needs to look sharp. Affiliate Coupons presents WP coupons neatly with easy-to-manage shortcode.
+- **Display coupons via shortcode** - Your frontend needs to look sharp. Affiliate Coupons presents coupons neatly with easy-to-manage shortcode.
 - **Filter your coupons** - Proudly display your best coupons front and centre. You can choose which affiliate coupons to promote to the top of your pages.
 - **Presentation options with coupon templates** - Choose between standard, grid or list templates for laying out your coupons to best suit your website. You can even [view our full template list](https://affcoups.com/templates/) right now.
 - **Central or sidebar? It’s up to you** - Enjoy our fully integrated widgets for displaying your affiliate coupons in the sidebar.
 - **Check our coupon plugin live demo out** - Take a look at our free [online demo](https://affcoups.com/demo/) of the Affiliate Coupons Plugin in action.
 - **Follow our changelog** - See exactly how we have been carrying out [regular enhancements](https://wordpress.org/plugins/affiliate-coupons/#developers) to maximize your coupon plugin success!
 
-All of these key features are **available in our free version of Affiliate Coupons**. That’s some crazy value!
+All of these key features are **available in our free version of Affiliate Coupons**. 
 
-**You want more?** Dive into our Pro version of this coupon plugin for all the above AND additional features which make the plugin even more amazing!
+**You want more?** Dive into our Pro version of this coupon plugin for all the above AND additional features!
 
 *Make more affiliate money with the Pro version and its following highlights:*
 
@@ -107,8 +107,18 @@ Affiliate Coupons is a fully GDPR compatible WordPress coupon plugin. We don’t
 2. Settings
 
 == Changelog ==
+= Version 1.8.3 (20 Dec 2025) =
+* At few places string was not translatable , fixed. 
+* Plugin tested upto Wordpress V6.9
 
-= Version 1.8 (16 Feb 2025 =
+= Version 1.8.2 (06 Oct 2025) =
+* rectified warning message "undefined title_display and undefined description"
+
+= Version 1.8.1 (06 Oct 2025) =
+* readme.txt file updated as per wordpress guidelines
+* Plugin tested upto WordPress v6.8.3
+
+= Version 1.8 (16 Feb 2025) =
 * fix : security vulnerability patched
 * Tweak : added code to support pro feature
 * Plugin tested upto WordPress v6.7.1

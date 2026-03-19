@@ -49,13 +49,13 @@ class RWMB_File_Field extends RWMB_Field {
 	public static function ajax_delete_file() {
 		$request = rwmb_request();
 
-		$field_id = $request->filter_post( 'field_id', FILTER_SANITIZE_STRING );
+		$field_id = $request->filter_post( 'field_id', FILTER_DEFAULT );
 		check_ajax_referer( "rwmb-delete-file_{$field_id}" );
 
 		// Make sure the file to delete is in the custom field.
 		$attachment  = $request->post( 'attachment_id' );
-		$object_id   = $request->filter_post( 'object_id', FILTER_SANITIZE_STRING );
-		$object_type = $request->filter_post( 'object_type', FILTER_SANITIZE_STRING );
+		$object_id   = $request->filter_post( 'object_id', FILTER_DEFAULT );
+		$object_type = $request->filter_post( 'object_type', FILTER_DEFAULT );
 		$field       = rwmb_get_field_settings( $field_id, array( 'object_type' => $object_type ), $object_id );
 		$field_value = self::raw_meta( $object_id, $field );
 		$field_value = $field['clone'] ? call_user_func_array( 'array_merge', $field_value ) : $field_value;

@@ -15,7 +15,8 @@ class RWMB_Core {
 	 * Initialization.
 	 */
 	public function init() {
-		load_plugin_textdomain( 'meta-box', false, plugin_basename( RWMB_DIR ) . '/languages/' );
+		add_action( 'init', [ $this, 'load_textdomain' ] );
+		// load_plugin_textdomain( 'meta-box', false, plugin_basename( RWMB_DIR ) . '/languages/' );
 
 		add_filter( 'plugin_action_links_meta-box/meta-box.php', array( $this, 'plugin_links' ), 20 );
 
@@ -23,6 +24,11 @@ class RWMB_Core {
 		add_action( 'init', array( $this, 'register_meta_boxes' ), 20 );
 		add_action( 'edit_page_form', array( $this, 'fix_page_template' ) );
 		$this->add_context_hooks();
+	}
+
+	public function load_textdomain() {
+		unload_textdomain( 'meta-box' );
+		load_plugin_textdomain( 'meta-box', false, plugin_basename( RWMB_DIR ) . '/languages/' );
 	}
 
 	/**

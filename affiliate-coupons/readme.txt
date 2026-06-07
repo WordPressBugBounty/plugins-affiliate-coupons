@@ -4,8 +4,8 @@ Donate link:
 Tags: affiliate coupons, Click reveal, discount
 Requires at least: 3.0.1
 Requires PHP: 5.6.0
-Tested up to: 6.9.4
-Stable tag: 1.8.4
+Tested up to: 7.0
+Stable tag: 1.8.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -108,7 +108,11 @@ Affiliate Coupons is a fully GDPR compatible WordPress coupon plugin. We don’t
 
 == Changelog ==
 
-= Version 1.8.4 (19 DMar 2026) =
+= Version 1.8.5 (07 Jun 2026) =
+* Tweak: Save changes button in setting page made sticky so that no need to scroll down to bottom to save change the wordpress notice w.r.t. loading of text domain , fixed. 
+* Plugin tested upto Wordpress V7.0
+
+= Version 1.8.4 (19 Mar 2026) =
 * Tweak: Code updated to handle the wordpress notice w.r.t. loading of text domain , fixed. 
 * Plugin tested upto Wordpress V6.9.4
 

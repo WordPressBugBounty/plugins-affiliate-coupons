@@ -1155,10 +1155,11 @@ if ( ! class_exists( 'Affcoups_Settings' ) ) {
 										$this->affcoups_do_settings_sections( 'affcoups_settings' );
 										?>
 
-                                        <p><?php submit_button( 'Save Changes', 'button-primary', 'submit', false ); ?></p>
+                                        <div style="position: sticky;bottom: 20px;  text-align: right;z-index: 100;background: #fff;padding: 10px 0; border-top: 1px solid #ddd;">
+                                        <?php submit_button( 'Save Changes', 'primary', 'submit', false ); ?>
+                                        </div>                                    
                                     </form>
                                 </div>
-
                             </div>
                             <!-- /#post-body-content -->
                             <div id="postbox-container-1" class="postbox-container">
